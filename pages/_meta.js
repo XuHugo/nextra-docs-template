@@ -1,16 +1,10 @@
 export default {
-  "index": "Introduction",
-  "getting-started": "Getting Started",
-  "core-concepts": "Core Concepts",
-  "advanced": "Advanced",
-  "api-reference": "API Reference",
-  "features": "Features",
-  "examples": "Examples",
-  "tutorials": "Tutorials",
-  "another": "Another",
-  "faq": "FAQ",
+  "index": "首页",
+  "life": "生活随笔",
+  "work": "工作札记",
+  "tech": "技术笔记",
   "about": {
-    "title": "About",
+    "title": "关于我",
     "type": "page"
   }
 }
