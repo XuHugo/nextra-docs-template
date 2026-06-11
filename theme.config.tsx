@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
           d="M64.883 1.813 62.037 4.66c-14.91 14.91-39.083 14.91-53.992 0L5.198 1.813a2.394 2.394 0 0 0-3.385 3.385L4.66 8.045c14.91 14.91 14.91 39.083 0 53.992l-2.847 2.846a2.394 2.394 0 0 0 3.385 3.386l2.847-2.847c14.91-14.91 39.082-14.91 53.992 0l2.846 2.847a2.394 2.394 0 1 0 3.386-3.386l-2.847-2.846c-14.91-14.91-14.91-39.083 0-53.992l2.847-2.846a2.394 2.394 0 0 0-3.386-3.386Z"
         />
       </svg>
-      <span className="text-base font-semibold">晴耕雨读</span>
+      <span className="text-base font-semibold">个人随笔</span>
     </div>
   ),
   head: (
@@ -122,10 +122,20 @@ const config: DocsThemeConfig = {
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span>© 2026 Kent Xu</span>
+            <span>© 2026</span>
           </div>
         </div>
         <div className="text-sm text-gray-500">晴时勤耕作，雨时读与思。</div>
+        <div className="text-sm text-gray-500">
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-gray-700 dark:hover:text-gray-300"
+          >
+            京ICP备2026033906号-1
+          </a>
+        </div>
       </div>
     )
   }
