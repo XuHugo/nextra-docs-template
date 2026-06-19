@@ -136,6 +136,23 @@ const config: DocsThemeConfig = {
             京ICP备2026033906号-1
           </a>
         </div>
+        <div className="text-sm text-gray-500">
+          <a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402056242"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 hover:text-gray-700 dark:hover:text-gray-300"
+          >
+            <img
+              src="/beian-icon.png"
+              alt="公安备案图标"
+              width="16"
+              height="16"
+              className="shrink-0"
+            />
+            <span>京公网安备11011402056242号</span>
+          </a>
+        </div>
       </div>
     )
   }
