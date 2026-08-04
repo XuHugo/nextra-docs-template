@@ -36,7 +36,7 @@
 
 .intro {
   position: absolute;
-  inset: clamp(1.5rem, 4vw, 3.5rem) auto auto clamp(1.5rem, 5vw, 5rem);
+  inset: clamp(7.5rem, 9vw, 9rem) auto auto clamp(1.5rem, 5vw, 5rem);
   z-index: 6;
   max-width: 32rem;
 }
@@ -81,9 +81,9 @@
 
 .universe {
   position: relative;
-  width: min(1020px, 87vw);
+  width: min(1050px, 68vw);
   aspect-ratio: 1000 / 760;
-  margin: clamp(5.5rem, 9vh, 8rem) auto 7.4rem;
+  margin: clamp(11rem, 18vh, 14rem) clamp(1rem, 3vw, 3rem) 3rem auto;
 }
 
 .orbits {
@@ -94,7 +94,7 @@
   overflow: visible;
 }
 
-.contours path {
+.contours :is(path, use) {
   fill: none;
   stroke: var(--ink);
   stroke-width: 2.1;
@@ -102,23 +102,18 @@
   opacity: 0.86;
 }
 
-.contours path:nth-child(2) {
+.contours :is(path, use):nth-child(2) {
   stroke-width: 1.7;
   opacity: 0.72;
 }
 
-.contours path:nth-child(3) {
+.contours :is(path, use):nth-child(3) {
   stroke-width: 2.4;
 }
 
-.contours path:nth-child(4) {
+.contours :is(path, use):nth-child(4) {
   stroke-width: 1.6;
   opacity: 0.78;
-}
-
-.orbitText {
-  transform-origin: center;
-  transform-box: view-box;
 }
 
 .orbitText text {
@@ -128,24 +123,12 @@
   letter-spacing: 0.08em;
 }
 
-.orbitTextOuter {
-  animation: orbitClockwise 80s linear infinite;
-}
-
 .orbitTextOuter text {
   font-size: 31px;
 }
 
-.orbitTextMiddle {
-  animation: orbitCounter 68s linear infinite;
-}
-
 .orbitTextMiddle text {
   font-size: 27px;
-}
-
-.orbitTextInner {
-  animation: orbitClockwise 48s linear infinite;
 }
 
 .orbitTextInner text {
@@ -273,13 +256,11 @@
 
 .dock {
   position: absolute;
-  right: clamp(1.25rem, 3vw, 3rem);
-  bottom: clamp(1.25rem, 2.5vw, 2.5rem);
-  left: clamp(1.25rem, 3vw, 3rem);
+  inset: 0 0 auto;
   z-index: 7;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgb(23 24 18 / 38%);
+  border-bottom: 1px solid rgb(23 24 18 / 38%);
   background: rgb(241 238 228 / 76%);
   backdrop-filter: blur(10px);
 }
@@ -330,8 +311,6 @@
   animation: scrollLine 2s ease-in-out infinite;
 }
 
-@keyframes orbitClockwise { to { transform: rotate(360deg); } }
-@keyframes orbitCounter { to { transform: rotate(-360deg); } }
 @keyframes coreFloat {
   0%, 100% { translate: 0 0; }
   50% { translate: 0 -7px; }
@@ -362,9 +341,9 @@
 :global(.dark) .dockItem { border-color: rgb(233 228 216 / 18%); }
 
 @media (max-width: 900px) {
-  .intro { inset: 2rem 1.5rem auto; }
+  .intro { inset: 8.5rem 1.5rem auto; }
   .intro h1 { font-size: clamp(3rem, 13vw, 6rem); }
-  .universe { width: 112vw; margin-top: 8rem; margin-left: -6vw; }
+  .universe { width: 112vw; margin-top: 15rem; margin-left: -6vw; }
   .orbitTextOuter text { font-size: 35px; }
   .core { width: 42%; height: 32%; }
   .annotationOne { left: 16%; }
@@ -376,25 +355,23 @@
 }
 
 @media (max-width: 560px) {
-  .shell { min-height: 800px; }
+  .shell { min-height: 940px; }
   .eyebrow { justify-content: space-between; font-size: 0.55rem; }
   .lead { font-size: 0.78rem; }
-  .universe { width: 155vw; margin-top: 9rem; margin-left: -27.5vw; }
+  .universe { width: 145vw; margin-top: 15rem; margin-left: -22.5vw; }
   .orbitTextOuter text { font-size: 38px; }
   .orbitTextMiddle text { font-size: 33px; }
   .orbitTextInner { display: none; }
   .core { min-width: 14rem; min-height: 8.5rem; }
   .coreMeta { display: none; }
   .annotation { display: none; }
-  .dock { right: 0.85rem; bottom: 0.85rem; left: 0.85rem; }
-  .dock { backdrop-filter: none; }
+  .dock { inset: 0 0 auto; backdrop-filter: none; }
   .dockItem { padding: 0.82rem 0.7rem; gap: 0.12rem 0.48rem; }
   .dockTitle { font-size: 0.78rem; }
   .dockNote { font-size: 0.45rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orbitText,
   .core,
   .status i,
   .scrollHint span {
