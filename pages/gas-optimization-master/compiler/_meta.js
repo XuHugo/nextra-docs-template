@@ -1,0 +1,23 @@
+export default {
+  "index": "模块导读",
+  "01-gte-vs-gt": "条件优化：>= 还是 >",
+  "02-not-vs-eq": "条件优化：使用 ! 代替 == 判断",
+  "03-nonzero-comparison": "待验证：无符号整数使用 != 0 代替 > 0",
+  "04-short-circuit-booleans": "条件优化：短路布尔值",
+  "05-split-boolean-expressions": "条件优化：拆分与返回关联的布尔表达式",
+  "06-unchecked": "适当使用unchecked",
+  "07-do-while-vs-for": "Do-While 替换 for",
+  "08-loop-unrolling": "展开循环",
+  "09-function-name-selector": "频繁使用的函数名",
+  "10-hash-array-string-comparison": "通过哈希比较数组和字符串",
+  "11-prefix-increment": "使用 ++i 替换 i++",
+  "12-bit-shifts": "使用位移替换乘除运算",
+  "13-cube-vs-exponentiation": "n * n * n替换n 3",
+  "14-private-internal-visibility": "合理使用 private 和 internal",
+  "15-compound-assignment": "x = x + y 与 x += y",
+  "16-enums-over-strings": "使用枚举而不是字符串",
+  "17-compiler-optimizer": "编译器优化器设置",
+  "18-lookup-tables": "查找表",
+  "19-precompiles": "预编译合约",
+  "20-named-returns": "始终使用命名返回"
+}

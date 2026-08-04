@@ -1,0 +1,410 @@
+.shell {
+  --ink: #171812;
+  --paper: #f1eee4;
+  --blue: #17275b;
+  --blue-light: #304891;
+  --signal: #ff5d3a;
+  --eye-x: 0px;
+  --eye-y: 0px;
+  --core-x: 0px;
+  --core-y: 0px;
+  position: relative;
+  width: calc(100% + 3rem);
+  min-height: calc(100svh - var(--nextra-navbar-height));
+  margin: 0 -1.5rem -4rem;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 18%, rgb(255 255 255 / 72%), transparent 28%),
+    radial-gradient(circle at 85% 74%, rgb(205 198 179 / 28%), transparent 30%),
+    var(--paper);
+  isolation: isolate;
+}
+
+.paperNoise {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.26;
+  pointer-events: none;
+  background-image:
+    repeating-radial-gradient(circle at 30% 20%, transparent 0 2px, rgb(35 34 26 / 7%) 2.5px 3px),
+    linear-gradient(95deg, transparent 0 49.8%, rgb(35 34 26 / 3%) 50%, transparent 50.2%);
+  background-size: 7px 7px, 160px 100%;
+  mix-blend-mode: multiply;
+}
+
+.intro {
+  position: absolute;
+  inset: clamp(1.5rem, 4vw, 3.5rem) auto auto clamp(1.5rem, 5vw, 5rem);
+  z-index: 6;
+  max-width: 32rem;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 0.75rem;
+  font: 600 0.68rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.16em;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #4c5145;
+}
+
+.status i {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #39a15e;
+  box-shadow: 0 0 0 4px rgb(57 161 94 / 12%);
+  animation: statusPulse 2.4s ease-in-out infinite;
+}
+
+.intro h1 {
+  margin: 0;
+  font: 800 clamp(3rem, 7vw, 7.5rem)/0.84 Arial, Helvetica, sans-serif;
+  letter-spacing: -0.085em;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin: 1rem 0 0;
+  font: 500 clamp(0.92rem, 1.25vw, 1.15rem)/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+}
+
+.universe {
+  position: relative;
+  width: min(1020px, 87vw);
+  aspect-ratio: 1000 / 760;
+  margin: clamp(5.5rem, 9vh, 8rem) auto 7.4rem;
+}
+
+.orbits {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.contours path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.86;
+}
+
+.contours path:nth-child(2) {
+  stroke-width: 1.7;
+  opacity: 0.72;
+}
+
+.contours path:nth-child(3) {
+  stroke-width: 2.4;
+}
+
+.contours path:nth-child(4) {
+  stroke-width: 1.6;
+  opacity: 0.78;
+}
+
+.orbitText {
+  transform-origin: center;
+  transform-box: view-box;
+}
+
+.orbitText text {
+  fill: var(--ink);
+  font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.orbitTextOuter {
+  animation: orbitClockwise 80s linear infinite;
+}
+
+.orbitTextOuter text {
+  font-size: 31px;
+}
+
+.orbitTextMiddle {
+  animation: orbitCounter 68s linear infinite;
+}
+
+.orbitTextMiddle text {
+  font-size: 27px;
+}
+
+.orbitTextInner {
+  animation: orbitClockwise 48s linear infinite;
+}
+
+.orbitTextInner text {
+  font: 700 22px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.13em;
+}
+
+.core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  display: flex;
+  width: 39%;
+  height: 30%;
+  min-width: 16rem;
+  min-height: 10rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0c1128;
+  border-radius: 43% 57% 47% 53% / 54% 42% 58% 46%;
+  color: #f6f1e5;
+  background:
+    radial-gradient(circle at 23% 18%, rgb(255 255 255 / 14%) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 64%, rgb(255 255 255 / 9%) 0 1px, transparent 1.5px),
+    linear-gradient(135deg, var(--blue-light), var(--blue) 50%, #101b43);
+  background-size: 19px 19px, 23px 23px, 100% 100%;
+  box-shadow: 0 28px 70px rgb(20 32 78 / 22%);
+  transform: translate(calc(-50% + var(--core-x)), calc(-50% + var(--core-y)));
+  transition: transform 180ms ease-out;
+  animation: coreFloat 6s ease-in-out infinite;
+}
+
+.coreGlow {
+  position: absolute;
+  inset: -16%;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgb(49 72 144 / 14%);
+  filter: blur(28px);
+}
+
+.eyes {
+  position: absolute;
+  left: 17%;
+  top: 40%;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.eye {
+  position: relative;
+  display: block;
+  width: clamp(2.25rem, 4.5vw, 4rem);
+  height: clamp(1.15rem, 2.3vw, 2rem);
+  overflow: hidden;
+  border: 1.5px solid #0b0c0a;
+  border-radius: 75% 15% 75% 15% / 70% 20% 70% 20%;
+  background: #fffdf4;
+  transform: rotate(45deg);
+}
+
+.eye:nth-child(2) {
+  border-radius: 15% 75% 15% 75% / 20% 70% 20% 70%;
+  transform: rotate(-45deg);
+}
+
+.eye i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #090a08;
+  transform: translate(calc(-50% + var(--eye-x)), calc(-50% + var(--eye-y)));
+  transition: transform 120ms ease-out;
+}
+
+.coreLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+}
+
+.coreLabel span {
+  font-size: clamp(0.68rem, 1.1vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.coreLabel strong {
+  font-size: clamp(2.7rem, 6.2vw, 5.7rem);
+  letter-spacing: -0.09em;
+}
+
+.coreMeta {
+  position: absolute;
+  right: 12%;
+  bottom: 15%;
+  font: 500 clamp(0.46rem, 0.75vw, 0.66rem)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.13em;
+  opacity: 0.68;
+}
+
+.annotation {
+  position: absolute;
+  z-index: 4;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid rgb(23 24 18 / 45%);
+  border-radius: 999px;
+  font: 600 clamp(0.46rem, 0.68vw, 0.62rem)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em;
+  background: rgb(241 238 228 / 76%);
+  backdrop-filter: blur(4px);
+}
+
+.annotationOne { left: 11%; top: 27%; transform: rotate(-8deg); }
+.annotationTwo { right: 14%; top: 28%; transform: rotate(6deg); }
+.annotationThree { right: 19%; bottom: 19%; transform: rotate(-4deg); }
+
+.dock {
+  position: absolute;
+  right: clamp(1.25rem, 3vw, 3rem);
+  bottom: clamp(1.25rem, 2.5vw, 2.5rem);
+  left: clamp(1.25rem, 3vw, 3rem);
+  z-index: 7;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgb(23 24 18 / 38%);
+  background: rgb(241 238 228 / 76%);
+  backdrop-filter: blur(10px);
+}
+
+.dockItem {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    'index title arrow'
+    '. note arrow';
+  gap: 0.15rem 0.75rem;
+  padding: 1rem clamp(0.75rem, 1.8vw, 1.5rem);
+  color: inherit;
+  text-decoration: none;
+  border-right: 1px solid rgb(23 24 18 / 24%);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.dockItem:last-child { border-right: 0; }
+.dockItem:hover { color: #fff; background: var(--blue); }
+.dockIndex { grid-area: index; font: 600 0.62rem/1.4 ui-monospace, monospace; opacity: 0.58; }
+.dockTitle { grid-area: title; overflow: hidden; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.dockNote { grid-area: note; font: 500 0.54rem/1.4 ui-monospace, monospace; letter-spacing: 0.08em; opacity: 0.55; }
+.arrow { grid-area: arrow; align-self: center; font-size: 1.1rem; transition: transform 180ms ease; }
+.dockItem:hover .arrow { transform: translate(3px, -3px); }
+
+.scrollHint {
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font: 600 0.53rem/1 ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+}
+
+.scrollHint span {
+  display: block;
+  width: 1px;
+  height: 2.6rem;
+  background: currentColor;
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes orbitClockwise { to { transform: rotate(360deg); } }
+@keyframes orbitCounter { to { transform: rotate(-360deg); } }
+@keyframes coreFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.42; }
+}
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(0.45); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+}
+
+:global(.dark) .shell {
+  --ink: #e9e4d8;
+  --paper: #0d1020;
+  --blue: #17275b;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 16%, rgb(50 72 145 / 30%), transparent 28%),
+    radial-gradient(circle at 84% 70%, rgb(157 89 58 / 14%), transparent 28%),
+    var(--paper);
+}
+
+:global(.dark) .paperNoise { mix-blend-mode: screen; opacity: 0.13; }
+:global(.dark) .annotation { background: rgb(13 16 32 / 72%); border-color: rgb(233 228 216 / 34%); }
+:global(.dark) .dock { background: rgb(13 16 32 / 78%); border-color: rgb(233 228 216 / 28%); }
+:global(.dark) .dockItem { border-color: rgb(233 228 216 / 18%); }
+
+@media (max-width: 900px) {
+  .intro { inset: 2rem 1.5rem auto; }
+  .intro h1 { font-size: clamp(3rem, 13vw, 6rem); }
+  .universe { width: 112vw; margin-top: 8rem; margin-left: -6vw; }
+  .orbitTextOuter text { font-size: 35px; }
+  .core { width: 42%; height: 32%; }
+  .annotationOne { left: 16%; }
+  .annotationTwo { right: 17%; }
+  .dock { grid-template-columns: repeat(2, 1fr); }
+  .dockItem:nth-child(2) { border-right: 0; }
+  .dockItem:nth-child(-n + 2) { border-bottom: 1px solid rgb(23 24 18 / 24%); }
+  .scrollHint { display: none; }
+}
+
+@media (max-width: 560px) {
+  .shell { min-height: 800px; }
+  .eyebrow { justify-content: space-between; font-size: 0.55rem; }
+  .lead { font-size: 0.78rem; }
+  .universe { width: 155vw; margin-top: 9rem; margin-left: -27.5vw; }
+  .orbitTextOuter text { font-size: 38px; }
+  .orbitTextMiddle text { font-size: 33px; }
+  .orbitTextInner { display: none; }
+  .core { min-width: 14rem; min-height: 8.5rem; }
+  .coreMeta { display: none; }
+  .annotation { display: none; }
+  .dock { right: 0.85rem; bottom: 0.85rem; left: 0.85rem; }
+  .dock { backdrop-filter: none; }
+  .dockItem { padding: 0.82rem 0.7rem; gap: 0.12rem 0.48rem; }
+  .dockTitle { font-size: 0.78rem; }
+  .dockNote { font-size: 0.45rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbitText,
+  .core,
+  .status i,
+  .scrollHint span {
+    animation: none;
+  }
+
+  .core,
+  .eye i,
+  .dockItem,
+  .arrow {
+    transition: none;
+  }
+}
