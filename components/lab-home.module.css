@@ -10,7 +10,7 @@
   --core-y: 0px;
   position: relative;
   width: calc(100% + 3rem);
-  min-height: calc(100svh - var(--nextra-navbar-height));
+  min-height: 100svh;
   margin: 0 -1.5rem -4rem;
   overflow: hidden;
   color: var(--ink);
@@ -77,6 +77,51 @@
   margin: 1rem 0 0;
   font: 500 clamp(0.92rem, 1.25vw, 1.15rem)/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
   letter-spacing: 0.08em;
+}
+
+.labEntry {
+  display: grid;
+  width: min(22rem, 100%);
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-top: clamp(3.25rem, 5vw, 4.75rem);
+  padding: 1rem 0;
+  border-top: 1px solid rgb(23 24 18 / 48%);
+  border-bottom: 1px solid rgb(23 24 18 / 48%);
+  color: inherit;
+  text-decoration: none;
+  transition: color 180ms ease, padding 180ms ease;
+}
+
+.entryEyes {
+  display: flex;
+  gap: 0.12rem;
+}
+
+.entryEyes .eye {
+  width: 2rem;
+  height: 1rem;
+}
+
+.labEntry strong {
+  font: 800 clamp(1rem, 1.35vw, 1.25rem)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+}
+
+.labEntry > i {
+  font-style: normal;
+  font-size: 1.35rem;
+  transition: transform 180ms ease;
+}
+
+.labEntry:hover {
+  color: var(--signal);
+  padding-right: 0.45rem;
+}
+
+.labEntry:hover > i {
+  transform: translate(3px, -3px);
 }
 
 .universe {
@@ -339,6 +384,7 @@
 :global(.dark) .annotation { background: rgb(13 16 32 / 72%); border-color: rgb(233 228 216 / 34%); }
 :global(.dark) .dock { background: rgb(13 16 32 / 78%); border-color: rgb(233 228 216 / 28%); }
 :global(.dark) .dockItem { border-color: rgb(233 228 216 / 18%); }
+:global(.dark) .labEntry { border-color: rgb(233 228 216 / 38%); }
 
 @media (max-width: 900px) {
   .intro { inset: 8.5rem 1.5rem auto; }
@@ -358,7 +404,10 @@
   .shell { min-height: 940px; }
   .eyebrow { justify-content: space-between; font-size: 0.55rem; }
   .lead { font-size: 0.78rem; }
-  .universe { width: 145vw; margin-top: 15rem; margin-left: -22.5vw; }
+  .labEntry { width: 17rem; margin-top: 2.5rem; padding: 0.85rem 0; }
+  .labEntry strong { font-size: 0.9rem; }
+  .entryEyes .eye { width: 1.75rem; height: 0.9rem; }
+  .universe { width: 145vw; margin-top: 19rem; margin-left: -22.5vw; }
   .orbitTextOuter text { font-size: 38px; }
   .orbitTextMiddle text { font-size: 33px; }
   .orbitTextInner { display: none; }
@@ -380,6 +429,8 @@
 
   .core,
   .eye i,
+  .labEntry,
+  .labEntry > i,
   .dockItem,
   .arrow {
     transition: none;

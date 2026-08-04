@@ -93,6 +93,14 @@ export default function LabHome() {
         </p>
         <h1 id="lab-home-title">Kent&apos;s Lab</h1>
         <p className={styles.lead}>保持好奇，持续实验。</p>
+        <a className={styles.labEntry} href="/life/">
+          <span className={styles.entryEyes} aria-hidden="true">
+            <span className={styles.eye}><i /></span>
+            <span className={styles.eye}><i /></span>
+          </span>
+          <strong>ENTER THE LAB</strong>
+          <i className={styles.entryArrow} aria-hidden="true">↗</i>
+        </a>
       </header>
 
       <div className={styles.universe} aria-label="Kent's Lab 技术实验轨道">
