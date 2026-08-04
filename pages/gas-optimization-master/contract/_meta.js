@@ -1,0 +1,21 @@
+export default {
+  "index": "模块导读",
+  "01-payable": "payable",
+  "02-predict-contract-addresses": "预测合约地址的妙用",
+  "03-contract-metadata": "优化合约元数据",
+  "04-selfdestruct-temporary-contracts": "临时合约中使用 selfdestruct",
+  "05-internal-functions-and-modifiers": "内部函数和修饰符",
+  "06-modifier-view-functions": "待验证：修改器中使用内部视图函数",
+  "07-clones": "使用克隆合约",
+  "08-monolithic-architecture": "使用单体架构",
+  "09-gas-optimized-libraries": "选择 Gas 优化库",
+  "10-fallback-and-receive": "转账时使用 fallback 或 receive",
+  "11-eip2930-access-lists": "使用 EIP2930 预热存储槽",
+  "12-custom-errors": "使用自定义错误",
+  "13-existing-create2-factory": "使用现有的 create2 工厂",
+  "14-safemath": "Solidity 0.8+ 不再需要 SafeMath",
+  "15-external-vs-public": "external 与 public",
+  "16-inheritance": "继承",
+  "17-token-transfer-hooks": "使用钩子转移代币",
+  "18-inline-single-use-functions": "仅使用一次的内部函数可以内联"
+}

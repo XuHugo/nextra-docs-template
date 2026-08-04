@@ -21,16 +21,16 @@ const config: DocsThemeConfig = {
           d="M64.883 1.813 62.037 4.66c-14.91 14.91-39.083 14.91-53.992 0L5.198 1.813a2.394 2.394 0 0 0-3.385 3.385L4.66 8.045c14.91 14.91 14.91 39.083 0 53.992l-2.847 2.846a2.394 2.394 0 0 0 3.385 3.386l2.847-2.847c14.91-14.91 39.082-14.91 53.992 0l2.846 2.847a2.394 2.394 0 1 0 3.386-3.386l-2.847-2.846c-14.91-14.91-14.91-39.083 0-53.992l2.847-2.846a2.394 2.394 0 0 0-3.386-3.386Z"
         />
       </svg>
-      <span className="text-base font-semibold">个人随笔</span>
+      <span className="text-base font-semibold">Kent's Lab</span>
     </div>
   ),
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Kent 的个人博客，记录生活、工作、技术与长期思考。" />
-      <meta property="og:title" content="晴耕雨读｜Kent 的个人博客" />
-      <meta property="og:description" content="晴天努力工作，雨天安静思考。这里记录生活、工作、技术和成长。" />
-      <meta property="og:site_name" content="晴耕雨读" />
+      <meta name="description" content="Kent 的个人实验室，记录区块链、稳定币、EVM、AI 工具与长期思考。" />
+      <meta property="og:title" content="Kent's Lab｜Kent 的个人实验室" />
+      <meta property="og:description" content="保持好奇，持续实验。这里记录技术探索、项目实践、工作复盘与生活观察。" />
+      <meta property="og:site_name" content="Kent's Lab" />
       <style>{`
         /* Custom table of contents styles */
         .nextra-toc [data-level="1"] {
@@ -125,7 +125,7 @@ const config: DocsThemeConfig = {
             <span>© 2026</span>
           </div>
         </div>
-        <div className="text-sm text-gray-500">晴时勤耕作，雨时读与思。</div>
+        <div className="text-sm text-gray-500">保持好奇，持续实验。</div>
         <div className="text-sm text-gray-500">
           <a
             href="https://beian.miit.gov.cn/"
