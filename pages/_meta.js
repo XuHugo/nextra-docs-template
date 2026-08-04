@@ -4,6 +4,7 @@ export default {
     "type": "page",
     "theme": {
       "layout": "full",
+      "navbar": false,
       "sidebar": false,
       "toc": false,
       "breadcrumb": false,
