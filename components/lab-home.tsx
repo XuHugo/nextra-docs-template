@@ -3,10 +3,10 @@ import styles from './lab-home.module.css'
 
 const links = [
   {
-    href: '/gas-optimization-master/',
+    href: '/life/',
     index: '01',
-    title: 'Gas 优化大师课',
-    note: 'SOLIDITY / EVM'
+    title: '生活随笔',
+    note: 'LIFE / MOMENTS'
   },
   {
     href: '/tech/',
