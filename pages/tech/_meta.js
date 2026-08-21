@@ -1,5 +1,4 @@
 export default {
-  index: "栏目说明",
   "coldcard-randomness": "从 Coldcard 事件看随机数的重要性",
   "how-stablecoins-fail": "稳定币机制解构：失败模式与五层风险分析框架",
   "stablecoin-mpc-threshold-wallet-architecture": "稳定币 MPC 门限签名钱包架构选型",
