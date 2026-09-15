@@ -1,11 +1,12 @@
 import React from 'react'
+import PalettePicker from './components/palette-picker'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  darkMode: false,
+  darkMode: true,
+  themeSwitch: { component: PalettePicker },
   nextThemes: {
-    defaultTheme: 'light',
-    forcedTheme: 'light'
+    defaultTheme: 'light'
   },
   logo: (
     <div className="flex items-center gap-2">
@@ -59,6 +60,7 @@ const config: DocsThemeConfig = {
         main td, main th { border-color: var(--blog-line); }
         ::selection { background: var(--blog-core-light); color: var(--blog-heading); }
         :focus-visible { outline: 2px solid var(--blog-accent); outline-offset: 3px; }
+        :root[data-palette="dark"] { color-scheme: dark; }
         /* Custom table of contents styles */
         .nextra-toc [data-level="1"] {
           color: var(--blog-heading) !important;

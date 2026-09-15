@@ -1,3 +1,4 @@
+import PalettePicker from './palette-picker'
 import { useEffect, useRef } from 'react'
 import styles from './lab-home.module.css'
 
@@ -168,6 +169,7 @@ export default function LabHome() {
       </div>
 
       <p className={styles.scrollHint}><span /> SCROLL TO EXPLORE</p>
+      <div className={styles.paletteSlot}><PalettePicker /></div>
     </section>
   )
 }

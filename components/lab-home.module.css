@@ -419,3 +419,10 @@
     transition: none;
   }
 }
+
+.paletteSlot { position: relative; z-index: 8; margin: 0 1.5rem 1rem; width: fit-content; }
+:global([data-palette="dark"]) .shell {
+  background: radial-gradient(circle at 18% 16%, rgb(50 72 145 / 30%), transparent 28%), var(--paper);
+}
+:global([data-palette="dark"]) .paperNoise { mix-blend-mode: screen; opacity: .1; }
+:global([data-palette="dark"]) .status { color: #b5bfbd; }
