@@ -2,6 +2,11 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
+  darkMode: false,
+  nextThemes: {
+    defaultTheme: 'light',
+    forcedTheme: 'light'
+  },
   logo: (
     <div className="flex items-center gap-2">
       <svg
@@ -21,24 +26,46 @@ const config: DocsThemeConfig = {
           d="M64.883 1.813 62.037 4.66c-14.91 14.91-39.083 14.91-53.992 0L5.198 1.813a2.394 2.394 0 0 0-3.385 3.385L4.66 8.045c14.91 14.91 14.91 39.083 0 53.992l-2.847 2.846a2.394 2.394 0 0 0 3.385 3.386l2.847-2.847c14.91-14.91 39.082-14.91 53.992 0l2.846 2.847a2.394 2.394 0 1 0 3.386-3.386l-2.847-2.846c-14.91-14.91-14.91-39.083 0-53.992l2.847-2.846a2.394 2.394 0 0 0-3.386-3.386Z"
         />
       </svg>
-      <span className="text-base font-semibold">Kent's Lab</span>
+      <span className="text-base font-semibold">个人随笔</span>
     </div>
   ),
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Kent 的个人实验室，记录区块链、稳定币、EVM、AI 工具与长期思考。" />
-      <meta property="og:title" content="Kent's Lab｜Kent 的个人实验室" />
-      <meta property="og:description" content="保持好奇，持续实验。这里记录技术探索、项目实践、工作复盘与生活观察。" />
-      <meta property="og:site_name" content="Kent's Lab" />
+      <meta name="description" content="Kent 的个人博客，记录生活、工作、技术与长期思考。" />
+      <meta property="og:title" content="晴耕雨读｜Kent 的个人博客" />
+      <meta property="og:description" content="晴天努力工作，雨天安静思考。这里记录生活、工作、技术和成长。" />
+      <meta property="og:site_name" content="晴耕雨读" />
       <style>{`
+        /* Warm paper palette across navigation and long-form reading. */
+        :root {
+          color-scheme: light;
+          --nextra-bg: 248, 249, 244;
+          --nextra-primary-hue: 160deg;
+          --nextra-primary-saturation: 35%;
+        }
+        html, body { background: #f8f9f4; color: #34463e; }
+        .nextra-nav-container nav,
+        .nextra-sidebar-container { background-color: #f8f9f4 !important; }
+        main { color: #34463e; }
+        main :is(h1, h2, h3, h4) { color: #263e34; }
+        main p, main li { line-height: 1.85; }
+        main a { color: #28634f; }
+        main a:hover { color: #184b39; }
+        main pre { background-color: #eef2e9 !important; border: 1px solid #dce4d8; }
+        main :not(pre) > code { background-color: #edf1e7; color: #345c49; }
+        main blockquote { border-color: #a6bfad; color: #56695c; }
+        main th { background-color: #edf2e8; }
+        main td, main th { border-color: #dce4d8; }
+        ::selection { background: #d1e5d7; color: #263e34; }
+        :focus-visible { outline: 2px solid #35735b; outline-offset: 3px; }
         /* Custom table of contents styles */
         .nextra-toc [data-level="1"] {
-          color: #000 !important;
+          color: #263e34 !important;
           font-weight: 600 !important;
         }
         .nextra-toc [data-level="1"]:hover {
-          color: #2563eb !important;
+          color: #28634f !important;
         }
         .dark .nextra-toc [data-level="1"] {
           color: #fff !important;
@@ -68,7 +95,7 @@ const config: DocsThemeConfig = {
         }
 
         .nextra-main {
-          border-left: 1px solid #e5e7eb !important;
+          border-left: 1px solid #dce4d8 !important;
           margin-left: 1rem !important;
         }
 
@@ -77,7 +104,7 @@ const config: DocsThemeConfig = {
         }
 
         .nextra-container > div:first-child {
-          border-left: 1px solid #e5e7eb;
+          border-left: 1px solid #dce4d8;
         }
 
         .dark .nextra-container > div:first-child {
@@ -85,7 +112,7 @@ const config: DocsThemeConfig = {
         }
 
         .nextra-sidebar-container {
-          border-right: 1px solid #e5e7eb !important;
+          border-right: 1px solid #dce4d8 !important;
           margin-right: 1rem !important;
         }
 
@@ -125,7 +152,7 @@ const config: DocsThemeConfig = {
             <span>© 2026</span>
           </div>
         </div>
-        <div className="text-sm text-gray-500">保持好奇，持续实验。</div>
+        <div className="text-sm text-gray-500">晴时勤耕作，雨时读与思。</div>
         <div className="text-sm text-gray-500">
           <a
             href="https://beian.miit.gov.cn/"
