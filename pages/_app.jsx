@@ -1,9 +1,11 @@
-// pages/_app.jsx
+import PalettePicker from '../components/palette-picker'
+import '../palette.css'
 
 export default function App({ Component, pageProps }) {
   return (
-    <div suppressHydrationWarning>
+    <>
       <Component {...pageProps} />
-    </div>
+      <PalettePicker />
+    </>
   )
 }

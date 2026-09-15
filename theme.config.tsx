@@ -40,32 +40,32 @@ const config: DocsThemeConfig = {
         /* Warm paper palette across navigation and long-form reading. */
         :root {
           color-scheme: light;
-          --nextra-bg: 248, 249, 244;
-          --nextra-primary-hue: 160deg;
+          --nextra-bg: var(--blog-rgb);
+          --nextra-primary-hue: var(--blog-hue);
           --nextra-primary-saturation: 35%;
         }
-        html, body { background: #f8f9f4; color: #34463e; }
+        html, body { background: var(--blog-paper); color: var(--blog-ink); }
         .nextra-nav-container nav,
-        .nextra-sidebar-container { background-color: #f8f9f4 !important; }
-        main { color: #34463e; }
-        main :is(h1, h2, h3, h4) { color: #263e34; }
+        .nextra-sidebar-container { background-color: var(--blog-paper) !important; }
+        main { color: var(--blog-ink); }
+        main :is(h1, h2, h3, h4) { color: var(--blog-heading); }
         main p, main li { line-height: 1.85; }
-        main a { color: #28634f; }
-        main a:hover { color: #184b39; }
-        main pre { background-color: #eef2e9 !important; border: 1px solid #dce4d8; }
-        main :not(pre) > code { background-color: #edf1e7; color: #345c49; }
-        main blockquote { border-color: #a6bfad; color: #56695c; }
-        main th { background-color: #edf2e8; }
-        main td, main th { border-color: #dce4d8; }
-        ::selection { background: #d1e5d7; color: #263e34; }
-        :focus-visible { outline: 2px solid #35735b; outline-offset: 3px; }
+        main a { color: var(--blog-accent); }
+        main a:hover { color: var(--blog-accent-hover); }
+        main pre { background-color: var(--blog-surface) !important; border: 1px solid var(--blog-line); }
+        main :not(pre) > code { background-color: var(--blog-surface); color: var(--blog-accent); }
+        main blockquote { border-color: var(--blog-core-deep); color: var(--blog-ink); }
+        main th { background-color: var(--blog-surface); }
+        main td, main th { border-color: var(--blog-line); }
+        ::selection { background: var(--blog-core-light); color: var(--blog-heading); }
+        :focus-visible { outline: 2px solid var(--blog-accent); outline-offset: 3px; }
         /* Custom table of contents styles */
         .nextra-toc [data-level="1"] {
-          color: #263e34 !important;
+          color: var(--blog-heading) !important;
           font-weight: 600 !important;
         }
         .nextra-toc [data-level="1"]:hover {
-          color: #28634f !important;
+          color: var(--blog-accent) !important;
         }
         .dark .nextra-toc [data-level="1"] {
           color: #fff !important;
@@ -95,7 +95,7 @@ const config: DocsThemeConfig = {
         }
 
         .nextra-main {
-          border-left: 1px solid #dce4d8 !important;
+          border-left: 1px solid var(--blog-line) !important;
           margin-left: 1rem !important;
         }
 
@@ -104,7 +104,7 @@ const config: DocsThemeConfig = {
         }
 
         .nextra-container > div:first-child {
-          border-left: 1px solid #dce4d8;
+          border-left: 1px solid var(--blog-line);
         }
 
         .dark .nextra-container > div:first-child {
@@ -112,7 +112,7 @@ const config: DocsThemeConfig = {
         }
 
         .nextra-sidebar-container {
-          border-right: 1px solid #dce4d8 !important;
+          border-right: 1px solid var(--blog-line) !important;
           margin-right: 1rem !important;
         }
 

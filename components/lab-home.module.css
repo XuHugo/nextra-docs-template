@@ -1,9 +1,9 @@
 .shell {
-  --ink: #34463e;
-  --paper: #f8f9f4;
-  --blue: #c2d8c6;
-  --blue-light: #e6eee0;
-  --signal: #35735b;
+  --ink: var(--blog-ink);
+  --paper: var(--blog-paper);
+  --blue: var(--blog-core);
+  --blue-light: var(--blog-core-light);
+  --signal: var(--blog-accent);
   --eye-x: 0px;
   --eye-y: 0px;
   --core-x: 0px;
@@ -193,13 +193,13 @@
   min-height: 10rem;
   align-items: center;
   justify-content: center;
-  border: 2px solid #9ebaa5;
+  border: 2px solid var(--blog-line);
   border-radius: 43% 57% 47% 53% / 54% 42% 58% 46%;
-  color: #294c3b;
+  color: var(--blog-heading);
   background:
     radial-gradient(circle at 23% 18%, rgb(255 255 255 / 14%) 0 1px, transparent 1.5px),
     radial-gradient(circle at 70% 64%, rgb(255 255 255 / 9%) 0 1px, transparent 1.5px),
-    linear-gradient(135deg, var(--blue-light), var(--blue) 50%, #b5d0bc);
+    linear-gradient(135deg, var(--blue-light), var(--blue) 50%, var(--blog-core-deep));
   background-size: 19px 19px, 23px 23px, 100% 100%;
   box-shadow: 0 28px 70px rgb(66 98 73 / 12%);
   transform: translate(calc(-50% + var(--core-x)), calc(-50% + var(--core-y)));
@@ -291,7 +291,7 @@
   border-radius: 999px;
   font: 600 clamp(0.46rem, 0.68vw, 0.62rem)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
   letter-spacing: 0.12em;
-  background: rgb(248 249 244 / 90%);
+  background: var(--blog-paper);
   backdrop-filter: blur(4px);
 }
 
@@ -306,7 +306,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-bottom: 1px solid rgb(81 113 91 / 24%);
-  background: rgb(248 249 244 / 90%);
+  background: var(--blog-paper);
   backdrop-filter: blur(10px);
 }
 
@@ -327,7 +327,7 @@
 }
 
 .dockItem:last-child { border-right: 0; }
-.dockItem:hover { color: #294c3b; background: #e2eddf; }
+.dockItem:hover { color: var(--blog-heading); background: var(--blog-surface); }
 .dockIndex { grid-area: index; font: 600 0.62rem/1.4 ui-monospace, monospace; opacity: 0.58; }
 .dockTitle { grid-area: title; overflow: hidden; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
 .dockNote { grid-area: note; font: 500 0.54rem/1.4 ui-monospace, monospace; letter-spacing: 0.08em; opacity: 0.55; }
