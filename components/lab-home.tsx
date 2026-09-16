@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import PalettePicker from './palette-picker'
 import { useEffect, useRef } from 'react'
 import styles from './lab-home.module.css'
@@ -78,12 +79,12 @@ export default function LabHome() {
 
       <nav className={styles.dock} aria-label="实验室入口">
         {links.map(link => (
-          <a href={link.href} className={styles.dockItem} key={link.href}>
+          <Link href={link.href} className={styles.dockItem} key={link.href}>
             <span className={styles.dockIndex}>{link.index}</span>
             <span className={styles.dockTitle}>{link.title}</span>
             <span className={styles.dockNote}>{link.note}</span>
             <span className={styles.arrow} aria-hidden="true">↗</span>
-          </a>
+          </Link>
         ))}
       </nav>
 
@@ -94,14 +95,14 @@ export default function LabHome() {
         </p>
         <h1 id="lab-home-title">Kent&apos;s Lab</h1>
         <p className={styles.lead}>保持好奇，持续实验。</p>
-        <a className={styles.labEntry} href="/life/">
+        <Link className={styles.labEntry} href="/life/">
           <span className={styles.entryEyes} aria-hidden="true">
             <span className={styles.eye}><i /></span>
             <span className={styles.eye}><i /></span>
           </span>
           <strong>ENTER THE LAB</strong>
           <i className={styles.entryArrow} aria-hidden="true">↗</i>
-        </a>
+        </Link>
       </header>
 
       <div className={styles.universe} aria-label="Kent's Lab 技术实验轨道">

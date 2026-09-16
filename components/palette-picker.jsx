@@ -13,7 +13,7 @@ export default function PalettePicker({ lite = false, className = '' }) {
   const [palette, setPalette] = useState('sage')
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(key)
+      const saved = document.documentElement.dataset.palette || localStorage.getItem(key)
       if (valid(saved)) {
         setPalette(saved)
         document.documentElement.dataset.palette = saved
