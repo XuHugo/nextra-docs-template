@@ -59,7 +59,7 @@ forge test --gas-report --mt test_revert_ -vvv --optimize
 
 
 
-![内存优化：错误消息图示](/images/gas-optimization-master/assembly/02-error-messages-01.png)
+![内存优化：错误消息图示](/images/gas-optimization-master/assembly/02-error-messages-01-redacted.png)
 
 
 

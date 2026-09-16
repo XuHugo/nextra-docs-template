@@ -114,17 +114,17 @@ forge test --gas-report --mt test_str_31(32\asm) -vvv --optimize
 
 
 
-![字符串尽量小于32个字节图示](/images/gas-optimization-master/storage/05-short-strings-01.png)
+![字符串尽量小于32个字节图示](/images/gas-optimization-master/storage/05-short-strings-01-redacted.png)
 
 
 
-![字符串尽量小于32个字节图示 2](/images/gas-optimization-master/storage/05-short-strings-02.png)
+![字符串尽量小于32个字节图示 2](/images/gas-optimization-master/storage/05-short-strings-02-redacted.png)
 
 
 
 
 
-![字符串尽量小于32个字节图示 3](/images/gas-optimization-master/storage/05-short-strings-03.png)
+![字符串尽量小于32个字节图示 3](/images/gas-optimization-master/storage/05-short-strings-03-redacted.png)
 
 
 

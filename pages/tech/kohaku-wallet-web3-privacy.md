@@ -1,5 +1,7 @@
 # 实测 Kohaku Wallet 后，我对 Web3 隐私的重新思考
 
+> 截图中的钱包地址、交易标识等个人信息已做遮挡处理。
+
 几年前，当我开始研究链上隐私时，最关心的问题并不是怎样把交易彻底隐藏起来，而是另一个更现实的问题：
 
 > 能否在保护用户隐私的同时，保留必要的审计与合规能力？
@@ -24,13 +26,13 @@ Kohaku 是面向以太坊生态的隐私工具集，Kohaku Wallet 则是基于 A
 - Helios、Colibri 和普通 RPC 之间的 Provider 抽象；
 - Relayer、Bundler 与 ERC-4337 交易发送路径。
 
-![Kohaku Wallet 中分离展示的私有余额与公开余额](/kohaku-private-public-balances.png)
+![Kohaku Wallet 中分离展示的私有余额与公开余额](/kohaku-private-public-balances-redacted.png)
 
 *Kohaku Wallet 将 Private balance 与 Public balance 分开管理。*
 
 这意味着用户理论上可以完成“公开资产进入隐私池—私密持有和转账—退出到普通地址”的完整闭环。它已经不只是“给钱包加一个混币按钮”，而是在重新设计钱包的数据访问、交易广播、密钥派生和隐私状态管理。
 
-![Kohaku Wallet 通过 Railgun 将公开 USDC Shield 到隐私账户](/kohaku-shield-funds.png)
+![Kohaku Wallet 通过 Railgun 将公开 USDC Shield 到隐私账户](/kohaku-shield-funds-redacted.png)
 
 *通过 Railgun 将 Sepolia 上的公开 USDC Shield 到隐私账户。*
 
@@ -44,7 +46,7 @@ Kohaku 是面向以太坊生态的隐私工具集，Kohaku Wallet 则是基于 A
 
 这也说明，隐私钱包的难点不只是 ZK 电路。密码学可以证明交易有效，却不会自动解决同步速度、密钥生命周期、费用估算和失败恢复。钱包必须准确管理“生成证明—获取报价—广播操作—等待 Receipt—验证链上事件—更新隐私余额”的完整状态链路。
 
-![Kohaku Wallet 从隐私池向 Railgun 地址发起 Private Send](/kohaku-private-send.png)
+![Kohaku Wallet 从隐私池向 Railgun 地址发起 Private Send](/kohaku-private-send-redacted.png)
 
 *Private Send：从隐私余额向 Railgun 地址转移资产。*
 

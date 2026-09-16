@@ -41,7 +41,7 @@ forge test --gas-report --mt test_monolithic_ -vvv --optimize
 
 
 
-![使用单体架构图示](/images/gas-optimization-master/contract/08-monolithic-architecture-01.png)
+![使用单体架构图示](/images/gas-optimization-master/contract/08-monolithic-architecture-01-redacted.png)
 
 
 

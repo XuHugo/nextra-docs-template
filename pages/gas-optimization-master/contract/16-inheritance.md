@@ -103,9 +103,9 @@ forge inspect InheritanceChild  storageLayout
 forge inspect CompositionChild  storageLayout
 ```
 
-![继承图示 2](/images/gas-optimization-master/contract/16-inheritance-02.png)
+![继承图示 2](/images/gas-optimization-master/contract/16-inheritance-02-redacted.png)
 
-![继承图示 3](/images/gas-optimization-master/contract/16-inheritance-03.png)
+![继承图示 3](/images/gas-optimization-master/contract/16-inheritance-03-redacted.png)
 
 
 

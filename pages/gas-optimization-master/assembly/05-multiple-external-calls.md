@@ -80,7 +80,7 @@ forge test --gas-report --mt test_memexp_calls_ -vvv --optimize
 
 
 
-![内存优化：多个外部调用图示](/images/gas-optimization-master/assembly/05-multiple-external-calls-01.png)
+![内存优化：多个外部调用图示](/images/gas-optimization-master/assembly/05-multiple-external-calls-01-redacted.png)
 
 
 

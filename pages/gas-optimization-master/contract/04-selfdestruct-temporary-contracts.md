@@ -59,7 +59,7 @@ forge test --gas-report --mt test_selfdestruct_ -vvv --optimize
 
 
 
-![临时合约中使用 selfdestruct图示](/images/gas-optimization-master/contract/04-selfdestruct-temporary-contracts-01.png)
+![临时合约中使用 selfdestruct图示](/images/gas-optimization-master/contract/04-selfdestruct-temporary-contracts-01-redacted.png)
 
 
 

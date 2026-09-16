@@ -1,5 +1,7 @@
 # 测试了一遍 Circle StableFX：关于链上外汇、技术架构和商业模式的一些思考
 
+> 截图中的钱包地址、交易标识等个人信息已做遮挡处理。
+
 最近因为工作原因，需要对 Circle StableFX 做一些测试。之前对 USDC、Arc、CPN 已经有一些了解，这次申请了 Sandbox 账号，主要想把换汇流程实际跑一遍，再看看它背后的技术和业务逻辑。
 
 操作本身不算复杂，但做完之后，有几个地方挺值得琢磨：为什么用 Maker 报价，而不是 AMM？为什么锁定汇率以后还要签名、交付资金？为什么测试时交易的一侧必须是 USDC？以及，做市商还要向平台付费，只靠点差能不能赚钱？
@@ -23,7 +25,7 @@
 
 我最直接的感受，是“成交”和“到账”被分得很清楚。确认报价时能看到兑换数量、手续费和抵押额；锁价之后，资金还需要按照这笔交易的要求完成交付。页面显示汇率已锁定，并不代表兑换所得已经进入钱包。
 
-[![确认报价页面展示汇率、手续费和锁价按钮](/images/work/stablefx-sandbox/confirm-quote.png)](/images/work/stablefx-sandbox/confirm-quote.png)
+[![确认报价页面展示汇率、手续费和锁价按钮](/images/work/stablefx-sandbox/confirm-quote-redacted.png)](/images/work/stablefx-sandbox/confirm-quote-redacted.png)
 
 *图 2：Sandbox 测试中的报价确认页面。图中价格与费用为当时测试值。*
 
@@ -67,7 +69,7 @@ EIP-712 规定结构化数据如何签名，Permit2 则参与按授权划转代�
 
 另外，Permit2 仍需要首次代币授权，不能理解成完全不需要 approve。已有适当授权之后，再利用签名完成后续转移，这是[首次交易教程](https://developers.circle.com/stablefx/quickstarts/console-first-trade)中说明的流程。
 
-[![钱包注资页面展示交付金额、收取金额和到期时间](/images/work/stablefx-sandbox/fund-trade.png)](/images/work/stablefx-sandbox/fund-trade.png)
+[![钱包注资页面展示交付金额、收取金额和到期时间](/images/work/stablefx-sandbox/fund-trade-redacted.png)](/images/work/stablefx-sandbox/fund-trade-redacted.png)
 
 *图 4：测试中的资金交付页面，再次确认 Delivering、Receiving 和 Due。*
 
@@ -83,7 +85,7 @@ EIP-712 规定结构化数据如何签名，Permit2 则参与按授权划转代�
 
 PvP 是 Payment versus Payment，可以理解成一手交钱、一手交资产。它要求最终两侧交割相互依赖，避免一方已经付出本金、另一方却没有支付的情况。
 
-[![本次测试的签名、资金交付与原子结算时序图](/images/work/stablefx-sandbox/settlement-sequence.png)](/images/work/stablefx-sandbox/settlement-sequence.png)
+[![本次测试的签名、资金交付与原子结算时序图](/images/work/stablefx-sandbox/settlement-sequence-redacted.png)](/images/work/stablefx-sandbox/settlement-sequence-redacted.png)
 
 *图 5：根据本次测试整理的交互时序。图中接口名称作了简化，用于说明签名、资金交付和结算之间的关系；具体接入以官方文档为准。*
 

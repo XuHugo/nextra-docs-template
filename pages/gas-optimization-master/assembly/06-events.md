@@ -50,7 +50,7 @@ forge test --gas-report --mt test_memexp_logger_ -vvv --optimize
 
 
 
-![内存优化：事件图示](/images/gas-optimization-master/assembly/06-events-01.png)
+![内存优化：事件图示](/images/gas-optimization-master/assembly/06-events-01-redacted.png)
 
 
 

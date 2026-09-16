@@ -66,7 +66,7 @@ forge test --gas-report --mt test_memexp_hasher_ -vvv --optimize
 
 
 
-![内存优化：Hash图示](/images/gas-optimization-master/assembly/07-hashing-01.png)
+![内存优化：Hash图示](/images/gas-optimization-master/assembly/07-hashing-01-redacted.png)
 
 
 

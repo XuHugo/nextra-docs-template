@@ -23,11 +23,11 @@ forge test --gas-report --mt test_metadata_ -vvv --optimize --no-metadata
 
 
 
-![优化合约元数据图示](/images/gas-optimization-master/contract/03-contract-metadata-01.png)
+![优化合约元数据图示](/images/gas-optimization-master/contract/03-contract-metadata-01-redacted.png)
 
 
 
-![优化合约元数据图示 2](/images/gas-optimization-master/contract/03-contract-metadata-02.png)
+![优化合约元数据图示 2](/images/gas-optimization-master/contract/03-contract-metadata-02-redacted.png)
 
 
 

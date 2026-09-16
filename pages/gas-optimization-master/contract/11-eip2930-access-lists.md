@@ -41,7 +41,7 @@ forge test --gas-report --mt test_accesslist_proxy_good(no) -vvv --optimize
 
 
 
-![使用 EIP2930 预热存储槽图示](/images/gas-optimization-master/contract/11-eip2930-access-lists-01.png)
+![使用 EIP2930 预热存储槽图示](/images/gas-optimization-master/contract/11-eip2930-access-lists-01-redacted.png)
 
 
 
